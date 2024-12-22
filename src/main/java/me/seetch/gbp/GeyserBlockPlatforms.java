@@ -68,38 +68,35 @@ public class GeyserBlockPlatforms {
     private void saveDefaultConfig(File configFile) {
         Config defaultConfig = new Config();
 
-        // Создаем серверные конфигурации
         defaultConfig.setServers(Map.of(
-                "lobby", createServerConfig("blacklist", List.of("JAVA", "UNKNOWN")),
-                "server-1", createServerConfig("blacklist", List.of("JAVA", "UNKNOWN")),
-                "server-2", createServerConfig("whitelist", List.of("GOOGLE", "IOS"))
+                "lobby", createServerConfig("blacklist", List.of("Java", "Unknown")),
+                "server-1", createServerConfig("blacklist", List.of("Java", "Unknown")),
+                "server-2", createServerConfig("whitelist", List.of("Android", "iOS"))
         ));
 
-        // Игнорируемые игроки
         defaultConfig.setExemptPlayers(List.of("seetch"));
 
-        // Сообщения
         defaultConfig.setMessages(new Config.MessagesConfig());
         defaultConfig.getMessages().setBlacklist("&cYou can't connect from &f%platforms%");
         defaultConfig.getMessages().setWhitelist("&aYou can connect only from &f%platforms%");
 
         defaultConfig.setDeviceNames(new HashMap<>() {{
-            put("JAVA", "Java");
-            put("UNKNOWN", "Unknown");
-            put("GOOGLE", "Android");
-            put("IOS", "iOS");
-            put("OSX", "macOS");
-            put("AMAZON", "Amazon");
-            put("GEARVR", "Gear VR");
-            put("HOLOLENS", "Hololens");
-            put("UWP", "Windows");
-            put("WIN32", "Windows x86");
-            put("DEDICATED", "Dedicated");
-            put("TVOS", "Apple TV");
+            put("Java", "Java");
+            put("Unknown", "Unknown");
+            put("Android", "Android");
+            put("iOS", "iOS");
+            put("macOS", "macOS");
+            put("Amazon", "Amazon");
+            put("Gear VR", "Gear VR");
+            put("Hololens", "Hololens");
+            put("Windows", "Windows");
+            put("Windows x86", "Windows x86");
+            put("Dedicated", "Dedicated");
+            put("Apple TV", "Apple TV");
             put("PS4", "PS4");
-            put("NX", "Switch");
-            put("XBOX", "Xbox One");
-            put("WINDOWS_PHONE", "Windows Phone");
+            put("Switch", "Switch");
+            put("Xbox One", "Xbox One");
+            put("Windows Phone", "Windows Phone");
         }});
 
         DumperOptions options = new DumperOptions();

@@ -28,7 +28,7 @@ public class EventHandler {
         RegisteredServer previousServer = event.getPreviousServer();
         RegisteredServer targetServer = event.getOriginalServer();
 
-        if (config.containsExemptPlayer(player.getUsername())) {
+        if (config.containsExemptPlayer(player.getUsername()) || player.hasPermission("geyserblockplatforms.exempt")) {
             return;
         }
 
@@ -44,7 +44,7 @@ public class EventHandler {
             Config.ServerConfig serverConfig = entry.getValue();
 
             if (targetServer.getServerInfo().getName().equals(serverName)) {
-                String platform = (os != null) ? os.toString() : "JAVA";
+                String platform = (os != null) ? os.toString() : "Java";
 
                 Mode modeKey = serverConfig.equalsMode("whitelist") ? Mode.WHITELIST :
                         (serverConfig.equalsMode("blacklist") ? Mode.BLACKLIST : null);
