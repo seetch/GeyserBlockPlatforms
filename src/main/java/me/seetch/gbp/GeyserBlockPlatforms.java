@@ -109,9 +109,7 @@ public class GeyserBlockPlatforms {
 
         Yaml yaml = new Yaml(representer, options);
 
-        String comments = "# You can view the list of devices at the link (you must use a key):\n" +
-                "# https://github.com/GeyserMC/Geyser/blob/master/common/src/main/java/org/geysermc/floodgate/util/DeviceOs.java\n" +
-                "# Use 'JAVA' to regulate connect from Java Edition.\n\n";
+        String comments = "# Use 'Java' to regulate connect from Java Edition.\n\n";
 
         try (FileWriter writer = new FileWriter(configFile)) {
             writer.write(comments);
