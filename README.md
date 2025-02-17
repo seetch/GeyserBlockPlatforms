@@ -1,4 +1,5 @@
 # ![image](https://github.com/user-attachments/assets/8778b16e-1c8f-43e6-a8d9-7ad9692926aa)
+
 Prohibit certain platforms from connecting to your server!
 
 ## Features
@@ -8,11 +9,18 @@ Prohibit certain platforms from connecting to your server!
 * Switch modes between whitelist and blacklist
 * Add exempt players without permissions
 
+## Commands
+
+| Description          | Command      |
+|----------------------|--------------|
+| Reload plugin config | `/gbpreload` |
+
 ## Permissions
 
-| Info                    | Permission                    |
+| Description             | Permission                    |
 |-------------------------|-------------------------------|
 | Give bypass to player   | `geyserblockplatforms.exempt` |
+| Allow to use /gbpreload | `geyserblockplatforms.reload` |
 
 ## Config
 

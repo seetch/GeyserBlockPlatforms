@@ -1,11 +1,14 @@
 package me.seetch.gbp;
 
 import com.google.inject.Inject;
+import com.velocitypowered.api.command.CommandManager;
+import com.velocitypowered.api.command.CommandMeta;
 import com.velocitypowered.api.event.Subscribe;
 import com.velocitypowered.api.event.proxy.ProxyInitializeEvent;
 import com.velocitypowered.api.plugin.Plugin;
 import com.velocitypowered.api.proxy.ProxyServer;
 import lombok.Getter;
+import me.seetch.gbp.command.ReloadCommand;
 import me.seetch.gbp.config.Config;
 import me.seetch.gbp.handler.EventHandler;
 import org.slf4j.Logger;
@@ -40,9 +43,10 @@ public class GeyserBlockPlatforms {
     public void onProxyInitialization(ProxyInitializeEvent event) {
         loadConfig();
         server.getEventManager().register(this, new EventHandler(this));
+        server.getCommandManager().register("gbpreload", new ReloadCommand(this));
     }
 
-    private void loadConfig() {
+    public void loadConfig() {
         Path configPath = Paths.get("plugins", "GeyserBlockPlatforms", "config.yml");
         File configFile = configPath.toFile();
 
